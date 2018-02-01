@@ -11,7 +11,5 @@ RUN npm install
 # Bundle app source
 COPY . /usr/src/app
 
-ENV APPINSIGHTS_INSTRUMENTATIONKEY=6f6fde25-c558-4045-8728-4c46422381c7
-
 EXPOSE 3001
 CMD [ "npm", "start" ]
