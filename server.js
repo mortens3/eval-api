@@ -1,3 +1,7 @@
+const appInsights = require("applicationinsights");
+appInsights.setAutoDependencyCorrelation(true);
+appInsights.start();
+
 const PORT = 3001;
 
 var express = require('express');        
