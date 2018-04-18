@@ -4,8 +4,14 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 const appInsights = require("applicationinsights");
-appInsights.setup("6f6fde25-c558-4045-8728-4c46422381c7");
-appInsights.start();
+appInsights.setup("6f6fde25-c558-4045-8728-4c46422381c7").setAutoDependencyCorrelation(true)
+.setAutoCollectRequests(true)
+.setAutoCollectPerformance(true)
+.setAutoCollectExceptions(true)
+.setAutoCollectDependencies(true)
+.setAutoCollectConsole(true)
+.setUseDiskRetryCaching(true)
+.start();
 
 
 var app = express();                 
