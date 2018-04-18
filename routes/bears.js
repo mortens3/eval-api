@@ -1,6 +1,7 @@
 ﻿var express = require('express');
 var router = express.Router();
 var Bear = require('./../models/bear');
+const appInsights = require("applicationinsights");
 
 router.route('/bears')
     // create a bear accessed at POST /api/bears
