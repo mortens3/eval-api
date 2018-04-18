@@ -18,6 +18,8 @@ router.route('/bears')
         Bear.find(function (err, bears) {
             if (err)
                 res.send(err);
+            let client = appInsights.defaultClient;
+            client.trackTrace({message: bears});
             res.json(bears);
         });
     });
