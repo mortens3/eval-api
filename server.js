@@ -7,7 +7,6 @@ const appInsights = require("applicationinsights");
 appInsights.setup("6f6fde25-c558-4045-8728-4c46422381c7");
 appInsights.start();
 
-
 var app = express();                 
 var router = express.Router();
 

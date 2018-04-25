@@ -1,7 +1,7 @@
 ﻿var express = require('express');
 var router = express.Router();
 var Bear = require('./../models/bear');
-const appInsights = require("applicationinsights");
+
 
 router.route('/bears')
     // create a bear accessed at POST /api/bears
@@ -19,8 +19,7 @@ router.route('/bears')
         Bear.find(function (err, bears) {
             if (err)
                 res.send(err);
-            let client = appInsights.defaultClient;
-            client.trackTrace({message: bears});
+          
             res.json(bears);
         });
     });
