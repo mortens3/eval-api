@@ -6,6 +6,11 @@ var mongoose = require('mongoose');
 const appInsights = require("applicationinsights");
 appInsights.setup("6f6fde25-c558-4045-8728-4c46422381c7");
 appInsights.start();
+let start = Date.now();
+server.on("listening", () => {
+    let duration = Date.now() - start;
+    appInsights.defaultClient.trackMetric({name: "server startup time", value: duration});
+});
 
 var app = express();                 
 var router = express.Router();
